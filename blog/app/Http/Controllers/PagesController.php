@@ -5,23 +5,21 @@ namespace App\Http\Controllers;
 */
 class PagesController extends Controller
 {
-	# include static pages
-	
-	// function __construct(argument)
-	// {
-	// 	# code...
-	// }
 
 	public function getIndex() {
 		return view('static.welcome');
 	}
 
 	public function getAbout() {
-		return view('static.about');
+		$firstName = 'Alex';
+		$lastName = 'Curtis';
+		$fullName = $firstName . " " . $lastName;
+		$email = 'example@yolo.com';
+		return view('static.about')-> with("fullName", $fullName)->withEmail($email);
 	}
 
 	public function getContact() {
 		return view('static.contact');
 	}
-}
 
+}
