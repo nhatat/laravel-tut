@@ -23,7 +23,7 @@
 
 Route::get('/', 'PostsController@index');
 
-Route::get('/posts/{posts}/', 'PostsController@show');
+Route::get('/posts/{post}/', 'PostsController@show');
 
 Route::post('/posts/', 'PostsController@create');
 

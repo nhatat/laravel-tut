@@ -1,9 +1,18 @@
 @extends('static.base')
 
 @section('content')
-	this is sample layout structure
-@endsection
+	@foreach ($posts as $post)
+		<div class="blog-title">
+			<a href="/posts/{{ $post->id }}/">{{ $post->title }}</a>
+			<p>Created at:{{ $post->created_at }} </p> 
+			<p>By:  {{ $post->user->name }}</p>
 
-@section('footer')
-	this is footer
+		</div>
+		<div class="blog-content">
+			{{ $post->body }}
+		</div>
+	@endforeach
+@endsection
+@section('paginator')
+	@include('layouts.paginator')
 @endsection
