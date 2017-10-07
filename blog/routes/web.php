@@ -13,12 +13,21 @@
 
 
 // Contact page
-Route::get('contact', 'PagesController@getContact');
+// Route::get('contact', 'PagesController@getContact');
 
 // About page
-Route::get('about', 'PagesController@getAbout');
+// Route::get('about', 'PagesController@getAbout');
 
 // Home page
-Route::get('/', 'PagesController@getIndex');
+// Route::get('/', 'PagesController@getIndex');
 
+Route::get('/', 'PostsController@index');
+
+Route::get('/posts/{post}/', 'PostsController@show');
+
+Route::post('/posts/', 'PostsController@create');
+
+Route::put('/posts/{posts}/', 'PostsController@update');
+
+Route::delete('/posts/{posts}/', 'PostsController@delete');
 
